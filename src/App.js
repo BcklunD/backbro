@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from './layout/Sidebar';
+import Footer from './layout/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Hem from './views/Hem';
+import Kontakt from './views/Kontakt';
+import Ledigt from './views/Ledigt';
+import Login from './views/Login';
+import Profil from './views/Profil';
+import Admin from './views/Admin';
+import './views/views.css';
 
 function App() {
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar />
+      <div className="content">
+        <Routes>
+          <Route exact path="/" element={<Hem/>}/>
+          <Route path="/kontakt" element={<Kontakt/>}/>
+          <Route path="/ledigt" element={<Ledigt/>}/>
+          <Route path="/ledigt/:id" element={<Ledigt />}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/profil" element={<Profil/>}/>
+          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/admin/:tab" element={<Admin/>}/>
+          <Route path="/admin/:tab/:id" element={<Admin/>}/>
+        </Routes>
+      </div>
+      <Footer />
     </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,395 @@
+.header-center { 
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.pull-left { float:left; }
+.pull-right { float:right; }
+
+.backarrow {
+    margin-top: 8px;
+    float: left;
+    color: #717744;
+    transition: transform 0.1s ease;
+}
+
+.backarrow:hover { color: #343d0e; }
+.backarrow:active { transform: scale(0.9); }
+
+.lagenhet-kort,
+.objekt a,
+.nyheter a { 
+    text-decoration: none;
+    color: black;
+}
+
+.lagenheter,
+.objekt,
+.nyheter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.lagenhet-kort {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 280px;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 30px 35px 0 5px;
+    font-size: 18px;
+    justify-content: space-between;
+    color: black;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.lagenheter .show,
+.objekt .show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lagenhet-kort:hover {
+    background-color: rgb(240, 240, 240);
+    transform: scale(1.01);
+    box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+    color: black;
+}
+
+.lagenhet-kort:hover .lagenhet-kort-top img {
+    filter: brightness(45%);
+    transition: all .5s ease;
+}
+
+.lagenhet-kort .lagenhet-kort-top::after {
+    content: "Läs mer";
+    position: absolute;
+    opacity: 0;
+    color: white;
+    font-size: 24px;
+    top: 70px;
+    left: 70px;
+    transition: all .5s ease;
+}
+
+.lagenhet-kort:hover .lagenhet-kort-top::after { opacity: 1; }
+
+.lagenhet-kort-bottom {
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.lagenhet-kort-bottom p { 
+    text-decoration: dashed;
+    font-size: 16px;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+}
+
+.lagenhet-kort-bottom .lagenhet-address { font-size: 18px; }
+
+.lagenhet-kort-top img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.lagenhet-kort .add-top,
+.nyhet-kort .add-top {
+    padding-top: 50px;
+    text-align: center;
+    opacity: 50%;
+    transition: all 0.5s ease;
+}
+
+.lagenhet-kort:hover .add-top,
+.nyhet-kort:hover .add-top { opacity: 70%; }
+
+.lagenhet-kort .add-bottom {
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.nyhet-kort {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 220px;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0 25px 20px 0;
+    font-size: 15px;
+    color: black;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    padding: 15px;
+}
+
+.nyhet-kort:hover {
+    background-color: rgb(240, 240, 240);
+    transform: scale(1.01);
+    box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+}
+
+.nyhet-kort-top p { 
+    font-size: 18px;
+}
+
+.hem {
+    display: flex;
+    flex-direction: column;
+}
+
+.hem-top {
+    height: 40%;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-top: -30px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.hem-top-text {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hem-top-text h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 3px 2px #000000;
+}
+
+.hem-top-text a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    border: 1px solid black;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+    padding: 10px 16px;
+    border-radius: 12px;
+}
+
+.hem-top-text a:hover { 
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 3px white;
+}
+
+.hem-top-text a:active { box-shadow: inset 0 0 5px white; }
+
+.hem-top-image {
+    width: 100%;
+    margin-top: -60px;
+}
+
+.hem .nyheter h1 {
+    margin-bottom: 25px;
+}
+
+.hem .nyheter {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hem .nyhet { 
+    width: 95%;
+    background-color: #aaaa8e5d;
+    color: black;
+    padding: 15px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    align-self: center;
+    margin-bottom: 20px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.profil .loginForm {
+    margin: 0 auto;
+}
+
+.backarrow {
+    display: inline-block;
+}
+
+.form {
+    margin: 0 auto;
+}
+
+.form .form-floating>.form-control, .form-floating>.form-select {
+    height: calc(3rem + 2px);
+}
+
+.form .form-floating>label {
+    font-size: .8rem;
+    color: gray;
+}
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    font-size: .85rem;
+}
+
+.form .form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    transform: scale(.85) translateY(-0.9rem) translateX(0.15rem);
+}
+
+.form .form-floating>.form-control {
+    padding: 1rem 1rem;
+    padding-top: 2rem;
+}
+
+.form .mb-4 { margin-bottom: .8rem !important; }
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs a {
+    color: white;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 1.2rem;
+    background: #6b7445;
+    padding: 10px 20px 10px 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 1px solid black;
+    border-bottom: none;
+    position: relative;
+    transition: all .5s ease;
+    box-shadow: inset 0px -11px 8px -10px rgb(65, 65, 65); 
+}
+
+.tabs a:hover {
+    background: #7d8363;
+}
+
+.tabs .active {
+    color: black;
+    background: #dadace;
+    box-shadow: none;
+}
+
+.tabs .active:hover {
+    background: #dadace;
+}
+
+.tabs a::after {
+    content: "";
+    background: #6b7445;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 49px;
+    left: 50%;
+    transition: all .5s ease;
+}
+
+.tabs .active::after {
+    content: "";
+    background: #dadace;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 48px;
+    left: 0;
+}
+
+.admin .admin-content {
+    min-height: 600px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0;
+    background: #dadace;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px,
+    0px -11px 8px -10px #CCC; 
+}
+
+.admin-content .lagenhet-kort {
+    margin: 0 25px 20px 0;
+}
+
+.nyheter .add-kort {
+    width: 180px;
+    text-align: center;
+}
+
+.nyhet-kort .add-top { padding-top: 10px; }
+
+.nyheter .add-bottom {
+    font-size: 1.6rem;
+    margin-top: 40px;
+}
+
+.hem .show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.lagenhet-detalj { 
+    width: 100%;
+    text-align: center;
+}
+
+.button-row .btn {
+    margin-right: 10px;
+}
+
+.lagenhet-edit {
+    justify-self: center;
+    max-width: 1000px;
+    text-align: center;
+}
+.lagenhet-edit select,
+.lagenhet-edit input,
+.lagenhet-edit textarea {
+    margin-bottom: 15px;
+}
+.input-row { 
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.lagenhet-edit select {
+    height: 60px !important;
+}
+.lagenhet-edit .form-check-input {
+    width: 2.5em !important;
+    margin-left: -3em !important;
+}
+.lagenhet-titel {
+    margin-bottom: 35px;
+}
+.postform .lagenhet-beskrivning {
+    resize: none;
+}
