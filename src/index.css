@@ -1,8 +1,8 @@
+
 body {
   margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   margin-left: 30px;
   background: #EFF1ED !important;
 }
@@ -20,10 +20,14 @@ code {
 }
 
 .content {
-  margin-left: 80px;
+  padding-left: 30px;
   margin-right: 30px;
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 50px;
+}
+
+.content > div:not(.hem) {
+  margin-top: 60px !important;
 }
 
 .form-control:disabled { color: #7a7575; }
@@ -41,4 +45,14 @@ body::before {
 
 form .hide {
   display: none;
+}
+
+.btn-danger {
+  color: #dc3545 !important;
+  background-color: #fff !important;
+  border-color: #dc3545 !important;
+}
+
+.btn-danger:hover {
+  background-color: #eee !important;
 }

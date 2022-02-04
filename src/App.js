@@ -1,4 +1,3 @@
-import Sidebar from './layout/Sidebar';
 import Footer from './layout/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hem from './views/Hem';
@@ -7,6 +6,7 @@ import Ledigt from './views/Ledigt';
 import Login from './views/Login';
 import Profil from './views/Profil';
 import Admin from './views/Admin';
+import Navbar from './layout/Navbar';
 import './views/views.css';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Sidebar />
+      <Navbar />
       <div className="content">
         <Routes>
           <Route exact path="/" element={<Hem/>}/>

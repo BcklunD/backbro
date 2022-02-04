@@ -12,12 +12,12 @@ function Hem() {
                     style={{
                         position: 'relative',
                         width: '100%',
-                        height: '500px',
-                        background: "linear-gradient(to bottom, rgba(151,151,126,1) 0%, rgba(230,230,209,1) 70%, rgba(239,241,237,1) 100%)",
-                        filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#97977e', endColorstr='#eff1ed', GradientType=0 )"
+                        height: '110vh',
+                        background: "linear-gradient(0deg, rgba(239,241,237,1) 0%, rgba(149,163,163,1) 45%, rgba(142,157,157,1) 51%, rgba(124,142,142,1) 69%, rgba(97,119,120,1) 100%)",
+                        filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#617778', endColorstr='#eff1ed', GradientType=0 )"
                     }}
                     src={homeImage}
-                    duration="1000ms"
+                    duration="1ms"
                 />
                 <div className="hem-top-text">
                     <h1>Backbro Fastigheter AB</h1>

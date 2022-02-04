@@ -1,3 +1,10 @@
+:root {
+    --main-dark-color: #617778;
+    --main-dark-hover-color: #94a8a9;
+    --main-dark-comp-color: #E4DEDE;
+    --main-light-color: #dbdbd0;
+}
+
 .header-center { 
     text-align: center;
     padding-bottom: 20px;
@@ -9,11 +16,11 @@
 .backarrow {
     margin-top: 8px;
     float: left;
-    color: #717744;
+    color: var(--main-dark-color);
     transition: transform 0.1s ease;
 }
 
-.backarrow:hover { color: #343d0e; }
+.backarrow:hover { color: var(--main-dark-hover-color); }
 .backarrow:active { transform: scale(0.9); }
 
 .lagenhet-kort,
@@ -169,7 +176,7 @@
 }
 
 .hem-top-text h1 {
-    font-size: 60px;
+    font-size: 2.5rem;
     margin-bottom: 50px;
     color: white;
     text-shadow: 3px 2px #000000;
@@ -177,7 +184,7 @@
 
 .hem-top-text a {
     color: white;
-    font-size: 24px;
+    font-size: 1rem;
     text-decoration: none;
     border: 1px solid black;
     background: rgba(0, 0, 0, 0.6);
@@ -275,7 +282,7 @@
     text-decoration: none;
     margin-right: 40px;
     font-size: 1.2rem;
-    background: #6b7445;
+    background: var(--main-dark-color);
     padding: 10px 20px 10px 20px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -287,22 +294,22 @@
 }
 
 .tabs a:hover {
-    background: #7d8363;
+    background: var(--main-dark-hover-color);
 }
 
 .tabs .active {
     color: black;
-    background: #dadace;
+    background: var(--main-light-color);
     box-shadow: none;
 }
 
 .tabs .active:hover {
-    background: #dadace;
+    background: var(--main-light-color);
 }
 
 .tabs a::after {
     content: "";
-    background: #6b7445;
+    background: var(--main-dark-color);
     position: absolute;
     width: 0;
     height: 0;
@@ -326,7 +333,7 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 0;
-    background: #dadace;
+    background: var(--main-light-color);
     padding: 30px;
     border: 1px solid black;
     border-radius: 10px;
@@ -374,6 +381,9 @@
 .lagenhet-edit textarea {
     margin-bottom: 15px;
 }
+select {
+    cursor: pointer;
+}
 .input-row { 
     display: flex;
     gap: 30px;
@@ -392,4 +402,7 @@
 }
 .postform .lagenhet-beskrivning {
     resize: none;
+}
+.postform {
+    margin-bottom: 30px;
 }

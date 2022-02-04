@@ -8,12 +8,12 @@ import Error from '../components/Error';
 
 function Profil() {
     const { token } = useToken();
-    const [loaded, setLoaded] = useState();
-    const [losenord, setLosenord] = useState();
-    const [fornamn, setFornamn] = useState();
-    const [efternamn, setEfternamn] = useState();
-    const [telefon, setTelefon] = useState();
-    const [address, setAddress] = useState();
+    const [loaded, setLoaded] = useState(false);
+    const [losenord, setLosenord] = useState("");
+    const [fornamn, setFornamn] = useState("");
+    const [efternamn, setEfternamn] = useState("");
+    const [telefon, setTelefon] = useState("");
+    const [address, setAddress] = useState("");
     let navigate = useNavigate();
 
     if (token == null)
@@ -33,10 +33,9 @@ function Profil() {
         if (address !== person.address)
             changes.address = address;
     }
-
-    const { data: person, isPending, error} = useSelect('person/' + token);
+    const { data: person, isPending, error} = useSelect('person/' + token.personid);
     
-    if (!isPending && !loaded) {
+    if (!isPending && !loaded && person != null) {
         setLoaded(true);
         setLosenord(person.losenord !== null ? person.losenord : "");
         setFornamn(person.fornamn !== null ? person.fornamn : "");

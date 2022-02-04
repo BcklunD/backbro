@@ -9,3 +9,10 @@ Fixa landinpage (insta)
 Gör en sida för att skapa nyheter
 Gör en sida för att skapa nya objekt
 Gör en sida för att skapa nya lägenheter
+
+Fortsätt med navbar
+navbar - transparent - hover - vit text
+fixa ändra färg på scroll
+endast den här effekten på förstsidan
+
+Fixa navnar meny om liten skärm

@@ -23,7 +23,7 @@ export default function useToken() {
             localStorage.removeItem('token');
         else {
             let now = new Date();
-            userToken.expires = now.getTime() + 1000 * 60 * 60 * 24 * 31;
+            userToken.expires = now.getTime() + 1000 * 60 * 60 * 24 * 7;
             localStorage.setItem('token', JSON.stringify(userToken));
             setToken(userToken.token);
         }
