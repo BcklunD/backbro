@@ -1,5 +1,3 @@
-Gör inloggning för admin
-Gör möjlighet att skapa lägenheter
 Gör design på hem-taben
 Input suggestions på objekt för lägenhet (insta)
 Slider med snap på bilder på lägenhet (insta)
@@ -10,9 +8,7 @@ Gör en sida för att skapa nyheter
 Gör en sida för att skapa nya objekt
 Gör en sida för att skapa nya lägenheter
 
-Fortsätt med navbar
-navbar - transparent - hover - vit text
-fixa ändra färg på scroll
-endast den här effekten på förstsidan
-
 Fixa navnar meny om liten skärm
+
+CRUD på objekt och Nyheter
+Fixa sida för intresseanmälningar
