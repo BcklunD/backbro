@@ -7,6 +7,7 @@ import Login from './views/Login';
 import Profil from './views/Profil';
 import Admin from './views/Admin';
 import Navbar from './layout/Navbar';
+import Sidemenu from './layout/Sidemenu';
 import './views/views.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Router>
     <div className="App">
       <Navbar />
+      <Sidemenu />
       <div className="content">
         <Routes>
           <Route exact path="/" element={<Hem/>}/>

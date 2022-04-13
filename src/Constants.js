@@ -1,6 +1,6 @@
 const prod = {
     url: {
-        DB_URL: "https://backbro.se"
+        DB_URL: "https://api.backbro.se"
     }
 };
 

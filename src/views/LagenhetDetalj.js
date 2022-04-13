@@ -17,8 +17,8 @@ const LagenhetDetalj = ({id}) => {
                 </div>
                 <hr />
                 <div className="lagenhet-info">
-                    <div className="lagenhet-info-left">
-                        <h4>Detaljer</h4>
+                    <h4>Detaljer</h4>
+                    <div className="lagenhet-info-detalj">
                         <p><i className="fas fa-search-location"></i> {lagenhet.address}</p>
                         <p><i className="fa-solid fa-up-down-left-right"></i> {lagenhet.kvm} m&#178;</p>
                         <p><i className="fa-regular fa-building"></i> {lagenhet.rum} rum</p>

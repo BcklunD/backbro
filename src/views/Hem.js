@@ -36,8 +36,10 @@ function Hem() {
                     nyhet.text = nyhet.text.replace("///", "&lt;br&gt;");
                     return (
                         <article className="nyhet" key={`Nyhet ${index}`}>
-                            <h3>{nyhet.rubrik}</h3>
-                            <p className="nyhets-text">{nyhet.text}</p>
+                            <div className="nyheter-content">
+                                <h3>{nyhet.rubrik}</h3>
+                                <p className="nyhets-text">{nyhet.text}</p>
+                            </div>
                         </article>
                     )
                 })}

@@ -1,14 +1,4 @@
-Gör design på hem-taben
-Input suggestions på objekt för lägenhet (insta)
-Slider med snap på bilder på lägenhet (insta)
-Fixa mail-addresser
-Köp webhotell
-Fixa landinpage (insta)
-Gör en sida för att skapa nyheter
-Gör en sida för att skapa nya objekt
-Gör en sida för att skapa nya lägenheter
-
-Fixa navnar meny om liten skärm
-
-CRUD på objekt och Nyheter
-Fixa sida för intresseanmälningar
+Fixa navbar meny om liten skärm
+Gör hela sidan mobilanpassad
+Gör design på ledig lägenhet
+Gör modal för intresseanmälningar
