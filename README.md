@@ -1,7 +1,7 @@
 # Backbro
 [Backbro.se](https://backbro.se/)
 
-This application is made for the real estate company Backbro AB.
+This application is a tool created for the real estate company Backbro AB.
 
 The website is used for displaying apartments and parking spots that are available for renting to new tenants. The website will also be used for the team working with Backbro AB to post important news.
 
