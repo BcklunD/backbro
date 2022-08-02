@@ -6,7 +6,8 @@ import { Form, Button, FloatingLabel } from 'react-bootstrap';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import Axios from "axios";
-import { config } from '../Constants'; 
+import { config } from '../Constants';
+import AnimatedPage from '../components/AnimatedPage';
 
 Axios.defaults.withCredentials = true;
 
@@ -49,36 +50,38 @@ function Profil() {
     }
 
     return (
-        <div className="profil">
-            <h1 className="header-center">Din profil</h1>
-            <hr/>
-            {error && <Error />}
-            {isPending && <Loading />}
-            {person && 
-                <Form className="form w-50" onSubmit={handleSubmit}>
-                    {sparad && <p className='alert alert-success'>Sparad</p>}
-                    <FloatingLabel controlId="epost" label="Epost" className="mb-4">
-                        <Form.Control type="email" placeholder="name@example.com" value={person.epost ? person.epost : ""} disabled />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="password" label="Lösenord" className="mb-4">
-                        <Form.Control type="password" placeholder="Lösenord" value={losenord} required onChange={e => setLosenord(e.target.value)} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="fornamn" label="Förnamn" className="mb-4">
-                        <Form.Control type="text" placeholder="Förnamn" value={fornamn} onChange={e => setFornamn(e.target.value)} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="efternamn" label="Efternamn" className="mb-4">
-                        <Form.Control type="text" placeholder="Efternamn" value={efternamn} onChange={e => setEfternamn(e.target.value)} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="telefon" label="Telefon" className="mb-4">
-                        <Form.Control type="text" placeholder="Telefon" value={telefon ? telefon : ""} onChange={e => setTelefon(e.target.value)} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="adress" label="Adress" className="mb-4">
-                        <Form.Control type="text" placeholder="Adress" value={address ? address : ""} onChange={e => setAddress(e.target.value)} />
-                    </FloatingLabel>
-                    <Button variant="primary" type="submit"> Spara </Button>
-                </Form>
-            }
-        </div>
+        <AnimatedPage>
+            <div className="profil">
+                <h1 className="header-center">Din profil</h1>
+                <hr/>
+                {error && <Error />}
+                {isPending && <Loading />}
+                {person && 
+                    <Form className="form" onSubmit={handleSubmit}>
+                        {sparad && <p className='alert alert-success'>Sparad</p>}
+                        <FloatingLabel controlId="epost" label="Epost" className="mb-4">
+                            <Form.Control type="email" placeholder="name@example.com" value={person.epost ? person.epost : ""} disabled />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="password" label="Lösenord" className="mb-4">
+                            <Form.Control type="password" placeholder="Lösenord" value={losenord} required onChange={e => setLosenord(e.target.value)} />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="fornamn" label="Förnamn" className="mb-4">
+                            <Form.Control type="text" placeholder="Förnamn" value={fornamn} onChange={e => setFornamn(e.target.value)} />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="efternamn" label="Efternamn" className="mb-4">
+                            <Form.Control type="text" placeholder="Efternamn" value={efternamn} onChange={e => setEfternamn(e.target.value)} />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="telefon" label="Telefon" className="mb-4">
+                            <Form.Control type="text" placeholder="Telefon" value={telefon ? telefon : ""} onChange={e => setTelefon(e.target.value)} />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="adress" label="Adress" className="mb-4">
+                            <Form.Control type="text" placeholder="Adress" value={address ? address : ""} onChange={e => setAddress(e.target.value)} />
+                        </FloatingLabel>
+                        <Button variant="primary" type="submit"> Spara </Button>
+                    </Form>
+                }
+            </div>
+        </AnimatedPage>
     );
 }
 

@@ -1,8 +1,7 @@
 
 body {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Exo', sans-serif;
   background: #EFF1ED !important;
 }
 
@@ -15,7 +14,7 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Exo', sans-serif;
 }
 
 .content {
@@ -25,7 +24,7 @@ code {
   margin-bottom: 50px;
 }
 
-.content > div:not(.hem) {
+.content > div {
   margin-top: 60px !important;
 }
 

@@ -57,15 +57,13 @@
     display: flex;
     flex-direction: column;
     width: 260px;
-    height: 280px;
-    border: 1px solid black;
-    border-radius: 8px;
+    height: 260px;
+    border: 1px solid #c1c1c1;
     transition: all 0.3s ease;
-    margin: 30px 35px 0 5px;
     font-size: 18px;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: black;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,.5); */
     opacity: 0;
     transform: translateX(100px);
 }
@@ -108,35 +106,48 @@
 }
 
 .lagenhet-kort-bottom p { 
-    text-decoration: dashed;
     font-size: 16px;
     padding-bottom: 4px;
     margin-bottom: 0;
 }
 
-.lagenhet-kort-bottom .lagenhet-address { font-size: 18px; }
+.lagenhet-kort-bottom .lagenhet-address { font-size: 17px; }
 
 .lagenhet-kort-top img {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    aspect-ratio: 16/9;
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
+}
+
+.content .ledigt,
+.content .profil {
+    min-height: 85vh;
 }
 
 .lagenhet-kort .add-top,
 .nyhet-kort .add-top {
     padding-top: 50px;
     text-align: center;
-    opacity: 50%;
+    opacity: .5;
     transition: all 0.5s ease;
 }
 
+.lagenhet-kort .add-top p {
+    font-size: 6rem;
+    line-height: 1;
+}
+
 .lagenhet-kort:hover .add-top,
-.nyhet-kort:hover .add-top { opacity: 70%; }
+.nyhet-kort:hover .add-top { opacity: .7; }
 
 .lagenhet-kort .add-bottom {
     padding-bottom: 50px;
     text-align: center;
-    font-size: 1.6rem;
+}
+
+.lagenhet-kort .add-bottom p {
+    font-size: 2rem;
 }
 
 .nyhet-kort {
@@ -145,17 +156,19 @@
     flex-direction: column;
     width: 360px;
     height: 220px;
-    border: 1px solid black;
-    border-radius: 8px;
+    border: 1px solid #c1c1c1;
+    /* border-radius: 8px; */
     transition: all 0.3s ease;
     margin: 0 25px 20px 0;
     font-size: 15px;
     color: black;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,.5); */
     padding: 15px;
+    overflow: hidden;
 }
 
-.nyhet-kort:hover {
+.nyhet-kort:hover,
+.intresseanmalan-kort:hover {
     background-color: rgb(240, 240, 240);
     transform: scale(1.01);
     box-shadow: 0px 0px 15px rgba(0,0,0,.5);
@@ -168,6 +181,7 @@
 .hem {
     display: flex;
     flex-direction: column;
+    margin-top: -60px;
 }
 
 .hem-top {
@@ -181,7 +195,7 @@
 }
 
 .hem-top .image {
-    filter: grayscale(25%);
+    filter: brightness(40%);
 }
 
 .hem-top-text {
@@ -201,13 +215,12 @@
 
 .hem-top-text a {
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    border: 1px solid black;
-    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #6F8F72;
+    background: rgb(0 0 0 / 80%);
     margin-top: 20px;
     padding: 10px 16px;
-    border-radius: 12px;
 }
 
 .hem-top-text a:hover { 
@@ -215,14 +228,44 @@
     box-shadow: 0 0 3px white;
 }
 
+.hem-top-text a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+    margin-left: -10px;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.hem-top-text a:hover::after {
+    margin-left: 10px;
+    opacity: 1;
+}
+
 .hem-top-text a:active { box-shadow: inset 0 0 5px white; }
+
+.hem-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    column-gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: min(1000px, 100%);
+}
+
+.hem-info-left, .hem-info-right {
+    width: 45%;
+}
 
 .hem .nyheter h1 {
     margin-bottom: 25px;
 }
 
 .hem .nyheter {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-bottom: 80px;
     overflow: hidden;
     position: relative;
@@ -245,11 +288,17 @@
     background: #6F8F72;
 }
 
+.hem .nyheter-title {
+    width: min(1000px, 100%);
+    margin: auto;
+}
+
 .hem .nyhets-text {
     white-space: pre-line;
 }
 
-.ledigt {
+.ledigt,
+.ledigt .lagenheter {
     padding-top: 20px;
 }
 
@@ -303,15 +352,15 @@
 }
 
 .tabs a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin-right: 40px;
     font-size: 1.2rem;
-    background: var(--main-dark-color);
+    background: #6F8F72;
     padding: 10px 20px 10px 20px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border: 1px solid black;
+    /* border-top-right-radius: 10px;
+    border-top-left-radius: 10px; */
+    border: 1px solid #c1c1c1;
     border-bottom: none;
     position: relative;
     transition: all .5s ease;
@@ -360,14 +409,16 @@
     margin-top: 0;
     background: var(--main-light-color);
     padding: 30px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px,
-    0px -11px 8px -10px #CCC; 
+    border: 1px solid #c1c1c1;
+    /* border-radius: 10px; */
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px,
+    0px -11px 8px -10px #CCC;  */
 }
 
-.admin-content .lagenhet-kort {
+.admin-content .lagenhet-kort,
+.ledigt .lagenhet-kort {
     margin: 0 25px 20px 0;
+    overflow: hidden;
 }
 
 .nyheter .add-kort {
@@ -454,7 +505,7 @@ select {
     margin-left: 200px;
     margin-bottom: 50px;
     text-transform: uppercase;
-    font-size: 1.06em;
+    font-size: 1em;
 }
 
 .lagenhet-info-detalj i { width: 30px}
@@ -528,7 +579,31 @@ select {
     font-size: .95rem;
     color: var(--main-dark-color);
 }
-
+#intresseBtn {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    /* border-radius: 45px; */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 30px;
+}
+#intresseBtn:hover {
+    background-color: #6F8F72;
+    box-shadow: 0px 15px 20px #6F8F72(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+#intresseBtn:active {
+    transform: translateY(-1px);
+}
 @media (max-width: 770px) {
     .ledigt .header-center {
         font-size: calc(1.075rem + 1.5vw);
@@ -546,4 +621,136 @@ select {
     .lagenhet-info-right {
         width: 90%;
     }
+    .tabs {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 5px;
+        flex-grow: 1;
+        width: 85%;
+    }
+    .tabs a {
+        font-size: .9rem;
+        margin-right: 0;
+        overflow: hidden;
+        padding: 7px 12px;
+    }
+    .tabs a.active { 
+        width: auto;
+        overflow: visible;
+    }
+    .tabs a::after {
+        top: 36px;
+    }
+    .tabs .active::after {
+        top: 35px;
+    }
+    .linkarrow { margin-left: 3px; }
+    .input-inline .form-floating { width: 85%; }
+    .input-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+    .lagenhet-kort p {
+        font-size: .95rem;
+    }
+    .lagenhet-kort .lagenhet-address {
+        font-size: 1.05rem;
+    }
+    .nyhet-kort {
+        width: min(90%, 360px);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .nyhet-kort-top p {
+        margin-bottom: 5px;
+    }
+    .nyhet-kort-bottom p {
+        font-size: .8rem;
+    }
+    .stick-bottom {
+        position: relative;
+        bottom: 0;
+    }
+    .stick-bottom p {
+        white-space: nowrap;
+    }
+    #intresseBtn {
+        padding: 1.1em 2.4em;
+    }
+}
+
+.lagenhet-detalj .fa-check,
+#intresseanmalanModal .fa-check { 
+    color: green;
+}
+
+.lagenhet-detalj .inskickadText {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+.lagenhet-detalj .inskickadText i {
+    margin-left: 10px;
+}
+.nyheter-content {
+    width: min(1000px, 100%);
+}
+.intresseanmalningar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    gap: 15px;
+}
+.intresseanmalan-kort {
+    border: 1px solid #c1c1c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 150px;
+    /* border-radius: 6px; */
+    background: white;
+    color: black;
+    transition: all 0.3s ease;
+}
+.intresseanmalningar a {
+    text-decoration: none;
+}
+.intresseanmalan-detalj {
+    display: flex;
+    width: min(100%, 1000px);
+    flex-direction: column;
+    align-items: center;
+}
+.intresseanmalan-titel {
+    width: 100%;
+    text-align: center;
+}
+.admin-content .intresseanmalningar .backarrow {
+    margin-top: 4px;
+}
+.intresse-fritext {
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    background: #fffff8;
+    border: 1px solid #d8d2c6;
+    border-radius: 6px;
+    min-height: 200px;
+    padding: 2rem;
+}
+.intresse-detaljer {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+.intresse-detaljer a:hover {
+    color: teal;
+    text-decoration: underline;
+}
+.profil .form {
+    width: min(500px, 100%);
 }

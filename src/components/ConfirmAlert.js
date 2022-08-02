@@ -10,11 +10,10 @@ const ConfirmAlert = ({ className, buttonText, title, message, confirmText, deny
             buttons: [
                 {
                     label: confirmText,
-                    onClick: confirmFunction
+                    onClick: confirmFunction,
                 },
                 {
-                    label: denyText
-                    // onClick: () => alert('Click No')
+                    label: denyText,
                 }
             ]
         });

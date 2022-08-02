@@ -3,7 +3,7 @@ import useElementOnScreen from '../effects/useElementOnScreen';
 import { config } from '../Constants'; 
 
 const Lagenhet = ({objekt}) => {
-    const [containerRef, isVisible] = useElementOnScreen({ rootMargin: "-140px" });
+    const [containerRef, isVisible] = useElementOnScreen({ rootMargin: "-40px" });
     if (isVisible)
         containerRef.current.classList.add("show");
 

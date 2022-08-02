@@ -10,11 +10,11 @@ const Footer = () => {
             </div>
             <div className="footer-right">
                 <h3>Kent Bäcklund</h3>
-                <p>070 - 39 88 606</p>
+                <p>073 - 383 29 70</p>
                 <h3>Stefan Bäcklund</h3>
-                <p>070 - 39 88 606</p>
+                <p>070 - 30 00 484</p>
                 <h3>Håkan Bäcklund</h3>
-                <p>070 - 39 88 606</p>
+                <p>070 - 641 85 65</p>
             </div>
         </div>
     )

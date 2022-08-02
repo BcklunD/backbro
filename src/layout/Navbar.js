@@ -4,6 +4,8 @@ import './layout.css';
 import useToken from '../effects/useToken';
 import { useState } from 'react';
 
+let clickDelay;
+
 const NavbarJs = () => {
     const [visaNavbar, setVisaNavbar] = useState(false);
     const { token } = useToken();
@@ -13,7 +15,7 @@ const NavbarJs = () => {
     const changeBackground = () => {
         if (window.scrollY > 150)
             setVisaNavbar(true);
-        else
+        else if (!document.getElementById("sidemenu").classList.contains("active"))
             setVisaNavbar(false);
     }
 
@@ -23,11 +25,22 @@ const NavbarJs = () => {
         document.getElementById("cross").classList.toggle('activeMenu');
     }
 
-    document.body.addEventListener('click', (e) => {
+    document.body.addEventListener('mousedown', (e) => {
+        const navbarText = document.getElementById("navbar-meny-icon");
         const sidemenu = document.getElementById("sidemenu");
-        const burger = document.getElementById("burger");
-        if ((!sidemenu.classList.contains('active') && burger.parentElement.parentElement.contains(e.target)) || (sidemenu.classList.contains('active') && !e.target.classList.contains("sidemenu")))
-            toggleSidemenu();
+        const toggle = navbarText.contains(e.target) 
+        || (sidemenu.classList.contains("active") && e.target !== sidemenu);
+        
+        if (toggle) {
+            clearTimeout(clickDelay);
+            clickDelay = setTimeout(() => {
+                if (window.location.pathname === "/") {
+                    const showNavbar = !sidemenu.classList.contains("active") || window.scrollY > 150;
+                    setVisaNavbar(showNavbar);
+                }
+                toggleSidemenu();
+            }, 10);
+        }
     });
 
     window.addEventListener('scroll', changeBackground);
@@ -56,11 +69,11 @@ const NavbarJs = () => {
                     </NavLink>}
                 </Navbar.Collapse>
                 <Navbar.Collapse className="justify-content-end navbar-burger">
-                    <Navbar.Text>
-                        <span onClick={toggleSidemenu} className='activeMenu' id='burger'>
+                    <Navbar.Text id='navbar-meny-icon'>
+                        <span className='activeMenu' id='burger'>
                             <i className="fa-solid fa-bars"></i>
                         </span>
-                        <span onClick={toggleSidemenu} id='cross'>
+                        <span id='cross'>
                             <i className="fa-solid fa-xmark"></i>
                         </span>
                     </Navbar.Text>

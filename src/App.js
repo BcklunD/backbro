@@ -1,5 +1,7 @@
 import Footer from './layout/Footer';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import { AnimatePresence } from 'framer-motion/dist/framer-motion';
 import Hem from './views/Hem';
 import Kontakt from './views/Kontakt';
 import Ledigt from './views/Ledigt';
@@ -11,28 +13,29 @@ import Sidemenu from './layout/Sidemenu';
 import './views/views.css';
 
 function App() {
+  const location = useLocation();
 
   return (
-    <Router>
     <div className="App">
       <Navbar />
       <Sidemenu />
       <div className="content">
-        <Routes>
-          <Route exact path="/" element={<Hem/>}/>
-          <Route path="/kontakt" element={<Kontakt/>}/>
-          <Route path="/ledigt" element={<Ledigt/>}/>
-          <Route path="/ledigt/:id" element={<Ledigt />}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/profil" element={<Profil/>}/>
-          <Route path="/admin" element={<Admin/>}/>
-          <Route path="/admin/:tab" element={<Admin/>}/>
-          <Route path="/admin/:tab/:id" element={<Admin/>}/>
-        </Routes>
+        <AnimatePresence exitBeforeEnter>
+          <Routes key={location.pathname.split("/")[1]} location={location}>
+            <Route exact path="/" element={<Hem/>}/>
+            <Route path="/kontakt" element={<Kontakt/>}/>
+            <Route path="/ledigt" element={<Ledigt/>}/>
+            <Route path="/ledigt/:id" element={<Ledigt />}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/profil" element={<Profil/>}/>
+            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/admin/:tab" element={<Admin/>}/>
+            <Route path="/admin/:tab/:id" element={<Admin/>}/>
+          </Routes>
+        </AnimatePresence>
       </div>
       <Footer />
     </div>
-    </Router>
   );
 }
 

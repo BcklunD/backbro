@@ -18,7 +18,7 @@ const ImageSlider = ({ lopnr, images }) => {
             statusFormatter={statusFormatter}>
             {images.map((image, index) => {
                 return (
-                    <div>
+                    <div key={`lagenhetsbild-${index}`}>
                         <img src={`${config.url.DB_URL}/lagenhet/${lopnr}/${image}`} alt='Lägenhetsbild' key={`${image}-${index}`}/>
                     </div>
                 )

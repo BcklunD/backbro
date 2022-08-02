@@ -134,7 +134,7 @@
     height: 100%;
     width: 0;
     background: #EFF1ED;
-    transition: width 0.7s ease-in-out;
+    transition: width 0.45s linear;
     display: flex;
     flex-direction: column;
     white-space: nowrap;
@@ -146,7 +146,7 @@
     height: 100%;
     width: 100vw;
     opacity: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.45s ease-in-out;
     background: black;
     position: absolute;
     right: 0;
@@ -163,8 +163,8 @@
     display: block;
     margin-left: 80px;
     opacity: .2;
-    transition: opacity, margin-left 0.4s ease-in-out;
-    transition-delay: .4s;
+    transition: opacity, margin-left 0.25s linear;
+    transition-delay: .45s;
     padding-left: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -189,7 +189,7 @@
 .sidemenu a:last-child {
     position: fixed;
     bottom: 5px;
-    width: 280px;
+    width: 220px;
 }
 
 .sidemenu.active a {
@@ -232,7 +232,7 @@
     background: transparent !important;
     color: black;
     width: 100%;
-    transition: all .7s;
+    transition: all .5s;
     opacity: .95;
 }
 
@@ -244,7 +244,7 @@
     left: 0;
     width: 100%;
     height: 0;
-    transition: all .7s;
+    transition: all .5s;
 }
 
 .navbar-wrapper .active-color {
@@ -276,7 +276,7 @@
 }
 
 .navbar-link {
-    color: black;
+    color: white;
     font-size: 1.2rem;
     transition: all .5s;
     text-decoration: none;
@@ -285,6 +285,7 @@
 .active .navbar-link {
     font-size: 1.1rem;
     transition: all .5s;
+    color: black;
 }
 
 .navbar-link:hover {
@@ -303,7 +304,11 @@
 .active .navbar-brand .navbar-link {
     font-size: 1.3rem;
     transition: all 0.5s;
+    color: black;
 }
+
+.navbar-burger #burger { color: white; }
+.active .navbar-burger #burger { color: black; }
 
 .hover-underline-animation {
     display: inline-block;
@@ -355,12 +360,12 @@
 }
 @media (max-width: 770px) {
     .sidemenu.active{
-        width: 280px;
+        width: 220px;
     }
     .sidemenu.active::before {
         opacity: 0.4;
-        width: calc(100vw - 280px);
-        right: 280px;
+        /* width: calc(100vw - 220px); */
+        right: 220px;
     }
     .navbar-wrapper > .navbar > .navbar-links {
         display: none !important;

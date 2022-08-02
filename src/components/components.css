@@ -293,3 +293,70 @@
 .kopplad-lagenhet:hover {
     transform: scale(1.05);
 }
+.react-confirm-alert-button-group > button {
+    font-size: 14px !important;
+}
+#intresseanmalanModal {
+    padding: 0;
+    border: none;
+    /* border-radius: 6px; */
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+                rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+                rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    top: 10%;
+    z-index: 10;
+    transition: none;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+}
+
+#intresseanmalanModal[open] {
+    transition: all .5s linear;
+    pointer-events: auto;
+    opacity: 1;
+    top: -5%;
+    width: min(100%, 400px);
+}
+#intresseanmalanModal::backdrop {
+    background: rgb(255 255 255 / 65%);
+}
+#intresseanmalanModal .title {
+    padding-top: 1.8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+#intresseanmalanModal .postform {
+    padding: 2rem 1.3rem;
+    opacity: 1;
+    transition: all .5s linear;
+}
+#intresseanmalanModal .button-row {
+    margin-top: 20px;
+}
+#intresseanmalanModal .button-row .btn {
+    font-size: .9rem;
+}
+#intresseanmalanModal .postform .form-floating {
+    margin-bottom: 20px;
+}
+#intresseanmalanModal .postform textarea {
+    resize: none;
+    font-size: 13px;
+}
+#intresseanmalanModal .inskickad {
+    transform: scale(1.2) translateX(0);
+    transition: all .7s linear;
+    transition-delay: .5s;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    bottom: 25%;
+}
+#intresseanmalanModal .inskickad.hide {
+    transform: scale(0) translateX(500px);
+}
+#intresseanmalanModal .postform.hide {
+    opacity: 0;
+}

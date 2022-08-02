@@ -7,6 +7,7 @@ import useToken from '../effects/useToken';
 import { useNavigate, useLocation } from "react-router-dom";
 import Axios from "axios";
 import { config } from '../Constants'; 
+import AnimatedPage from '../components/AnimatedPage';
 
 function useQuery() {
     const { search } = useLocation();
@@ -52,22 +53,24 @@ function Login() {
     }
 
     return (
-        <div className="login mt-5">
-            <h1>Logga in</h1>
-            <hr/>
-            {error && <p className="alert alert-danger">Felaktiga inloggningsuppgifter</p>}
-            <Form className="loginForm" onSubmit={login}>
-                <FloatingLabel controlId="epost" label="Epost" className="mb-4">
-                    <Form.Control type="email" placeholder="name@example.com" required onChange={e => setEpost(e.target.value)} />
-                </FloatingLabel>
-                <FloatingLabel controlId="password" label="Lösenord" className="mb-4">
-                    <Form.Control type="password" placeholder="Lösenord" required onChange={e => setPassword(e.target.value)} />
-                </FloatingLabel>
-                <Button variant="primary" type="submit">
-                    Logga in
-                </Button>
-            </Form>
-        </div>
+        <AnimatedPage>
+            <div className="login mt-5">
+                <h1>Logga in</h1>
+                <hr/>
+                {error && <p className="alert alert-danger">Felaktiga inloggningsuppgifter</p>}
+                <Form className="loginForm" onSubmit={login}>
+                    <FloatingLabel controlId="epost" label="Epost" className="mb-4">
+                        <Form.Control type="email" placeholder="name@example.com" required onChange={e => setEpost(e.target.value)} />
+                    </FloatingLabel>
+                    <FloatingLabel controlId="password" label="Lösenord" className="mb-4">
+                        <Form.Control type="password" placeholder="Lösenord" required onChange={e => setPassword(e.target.value)} />
+                    </FloatingLabel>
+                    <Button variant="primary" type="submit">
+                        Logga in
+                    </Button>
+                </Form>
+            </div>
+        </AnimatedPage>
     );
 }
 

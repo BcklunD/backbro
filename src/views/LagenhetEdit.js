@@ -28,6 +28,7 @@ const LagenhetEdit = ({ id, setReload }) => {
     const [kvm, setKvm] = useState(0);
     const [rum, setRum] = useState(0);
     const [hyra, setHyra] = useState(0);
+    const [lagenhetsnr, setLagenhetsnr] = useState(0);
     const [ledig, setLedig] = useState(1);
     const [beskrivning, setBeskrivning] = useState("");
     const [images, setImages] = useState([]);
@@ -41,6 +42,7 @@ const LagenhetEdit = ({ id, setReload }) => {
         setKvm(lagenhet.kvm !== undefined ? lagenhet.kvm : "");
         setRum(lagenhet.rum !== undefined ? lagenhet.rum : "");
         setHyra(lagenhet.hyra !== undefined ? lagenhet.hyra : "");
+        setLagenhetsnr(lagenhet.lagenhetsnr !== undefined ? lagenhet.lagenhetsnr : "");
         setLedig(lagenhet.ledig !== undefined ? lagenhet.ledig : 1);
         setBeskrivning(lagenhet.beskrivning !== undefined ? lagenhet.beskrivning : "");
         setImages(lagenhet.images !== undefined ? lagenhet.images : []);
@@ -53,6 +55,7 @@ const LagenhetEdit = ({ id, setReload }) => {
             kvm: kvm,
             rum: rum,
             hyra: hyra,
+            lagenhetsnr: lagenhetsnr,
             ledig: ledig,
             beskrivning: beskrivning
         }).then((response) => {
@@ -110,6 +113,9 @@ const LagenhetEdit = ({ id, setReload }) => {
                             </FloatingLabel>
                             <FloatingLabel controlId="hyra" label="Hyra">
                                 <Form.Control type="text" value={hyra} required onChange={e => setHyra(e.target.value)} />
+                            </FloatingLabel>
+                            <FloatingLabel controlId="lagenhetsnr" label="Lagenhetsnr">
+                                <Form.Control type="text" value={lagenhetsnr} required onChange={e => setLagenhetsnr(e.target.value)} />
                             </FloatingLabel>
                             <Form.Switch label="Ledig" checked={ledig} onChange={() => { setLedig(Math.abs(ledig === undefined ? 0 : ledig - 1)); }} />
                         </div>

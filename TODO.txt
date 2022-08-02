@@ -2,3 +2,6 @@ Fixa navbar meny om liten skärm
 Gör hela sidan mobilanpassad
 Gör design på ledig lägenhet
 Gör modal för intresseanmälningar
+Fortsätt med lämna intresseanmälan
+Styla mailet om intresseanmälningar
+Lägg till så man kan ta bort intresseanmälningar

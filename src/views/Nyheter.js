@@ -34,8 +34,10 @@ function Nyheter() {
                             </div>
                             <div className="nyhet-kort-bottom">
                                 <p>{nyhet.text.substring(0, 160)}{nyhet.text.length > 160 && "..."}</p>
-                                {nyhet.till && <p className="pull-right">Visas till {nyhet.till.split("T")[0]}</p>}
-                                <p>{nyhet.skapad.split("T")[0]}</p>
+                                <div className="stick-bottom">
+                                    {nyhet.till && <p className="pull-right">Visas till {nyhet.till.split("T")[0]}</p>}
+                                    <p>{nyhet.skapad.split("T")[0]}</p>
+                                </div>
                             </div>
                         </div>
                     </NavLink>
